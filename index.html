@@ -5,15 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benitez Nestor S. | Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #0d1117; color: #c9d1d9; text-align: center; padding: 50px; }
-        h1 { color: #58a6ff; }
-        .btn { display: inline-block; background-color: #238636; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        :root {
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --accent: #58a6ff;
+            --accent-success: #238636;
+            --border: #30363d;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
+        header { max-width: 900px; margin: 80px auto 40px auto; padding: 0 20px; text-align: center; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 20px; object-fit: cover; }
+        h1 { color: var(--text-bright); font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 15px; }
+        .bio { max-width: 600px; margin: 0 auto; color: #8b949e; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        h2 { color: var(--text-bright); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 40px 0 20px 0; font-size: 1.6rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .skill-card { background: var(--bg-card); border: 1px solid var(--border); padding: 15px; border-radius: 6px; }
+        .skill-card h3 { color: var(--accent); font-size: 1rem; margin-bottom: 8px; }
+        .skill-list { list-style: none; font-size: 0.9rem; }
+        .skill-list li { margin-bottom: 4px; padding-left: 12px; position: relative; }
+        .skill-list li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .project-card { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; border-radius: 8px; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        .project-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+        .project-title { color: var(--text-bright); font-size: 1.2rem; margin-bottom: 10px; }
+        .project-desc { font-size: 0.9rem; color: #8b949e; margin-bottom: 15px; flex-grow: 1; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
+        .tag { background: #21262d; border: 1px solid var(--border); padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; color: var(--text-main); }
+        .btn { display: inline-block; background-color: var(--accent-success); color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; transition: background-color 0.2s; }
+        .btn:hover { background-color: #2ea44f; }
+        .contact-list { list-style: none; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .contact-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .contact-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>👋 Hi, I'm Benitez Nestor S.</h1>
-    <p>IT Student | Full-Stack Web Developer & Automation Specialist</p>
-    <p>Welcome to my live portfolio website. This page is currently under development!</p>
-    <a href="https://github.com" class="btn">View My GitHub Profile</a>
+
+    <header>
+        <!-- Replace the src with your GitHub profile picture link later if you wish -->
+        <img src="https://github.com" alt="Benitez Nestor S." class="profile-img">
+        <h1>Benitez Nestor S.</h1>
+        <p class="subtitle">Full-Stack Web Developer & Automation Specialist</p>
+        <p class="bio">IT Student dedicated to building clean, high-performance technology applications. Specializing in responsive front-ends, robust backend scripting, and mobile solutions.</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="skills">
+            <h2>🛠️ Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend & Mobile</h3>
+                    <ul class="skill-list">
+                        <li>Python Scripting</li>
+                        <li>Kotlin Development</li>
+                        <li>C++ / OOP Concepts</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Databases & Tools</h3>
+                    <ul class="skill-list">
+                        <li>MySQL / PostgreSQL</li>
+                        <li>Git & Version Control</li>
+                        <li>Android Studio</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>📂 Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 Box -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-title">Business Automation System</div>
+                        <p class="project-desc">A production-ready automation script and database engine built to resolve manual pipeline errors for small commercial inventory operations.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com" class="btn" target="_blank">View Repository</a>
+                </div>
+
+                <!-- Project 2 Box -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-title">Android Task Application</div>
+                        <p class="project-desc">A native mobile application built to manage user scheduling profiles smoothly featuring secure architecture principles and local caching workflows.</p>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Android Studio</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com" class="btn" target="_blank">View Repository</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>📈 Let's Connect</h2>
+            <p style="text-align: center; color: #8b949e;">I am currently open to freelance opportunities, technical collaboration, and developer roles.</p>
+            <ul class="contact-list">
+                <li>📧 <a href="mailto:nestorbenitezx10@gmail.com" class="contact-link">nestorbenitezx10@gmail.com</a></li>
+                <li>💼 <a href="https://facebook.com" class="contact-link" target="_blank">Facebook Profile</a></li>
+                <li>🐙 <a href="https://github.com" class="contact-link" target="_blank">GitHub Code Base</a></li>
+            </ul>
+        </section>
+
+    </div>
+
 </body>
 </html>
